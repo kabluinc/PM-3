@@ -44,9 +44,6 @@ class TeleportCommand extends VanillaCommand{
 			return true;
 		}
 
-		$args = array_filter($args, function($arg){
-			return strlen($arg) > 0;
-		});
 		if(count($args) < 1 or count($args) > 6){
 			$sender->sendMessage(new TranslationContainer("commands.generic.usage", [$this->usageMessage]));
 
@@ -91,10 +88,17 @@ class TeleportCommand extends VanillaCommand{
 		}
 
 		if(count($args) < 3){
+$target2 = $sender->getServer()->getPlayer($args[0])->getName();
+$tpworlds = array("Serverspawn", "world", "world2", "World3", "plots");
+			if(in_array($target->getLevel()->getName(), $tpworlds) || $sender->hasPermission("tp.expempt")){
 			$origin->teleport($target);
 			Command::broadcastCommandMessage($sender, new TranslationContainer("commands.tp.success", [$origin->getName(), $target->getName()]));
 
 			return true;
+			}else{
+					$sender->sendMessage(TextFormat::RED . $target2 . " Is in a world you cant use /tp in. try /friend tp" . $target2);
+			}
+				
 		}elseif($target->getLevel() !== null){
 			if(count($args) === 4 or count($args) === 6){
 				$pos = 1;
