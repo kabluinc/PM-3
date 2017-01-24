@@ -74,8 +74,8 @@ namespace pocketmine {
 	use pocketmine\wizard\Installer;
 	use raklib\RakLib;
 
-	const VERSION = "1.6.1dev";
-	const API_VERSION = "2.1.0";
+	const VERSION = "1.6.2dev";
+	const API_VERSION = "3.0.0-ALPHA3";
 	const CODENAME = "Unleashed";
 
 	/*
@@ -489,7 +489,7 @@ namespace pocketmine {
 	}
 
 	ThreadManager::init();
-	$server = new Server($autoloader, $logger, \pocketmine\PATH, \pocketmine\DATA, \pocketmine\PLUGIN_PATH);
+	new Server($autoloader, $logger, \pocketmine\PATH, \pocketmine\DATA, \pocketmine\PLUGIN_PATH);
 
 	$logger->info("Stopping other threads");
 
