@@ -1,4 +1,4 @@
-[submodule "src/raklib"]
+2[submodule "src/raklib"]
 
 	path = src/raklib
 
@@ -6,13 +6,13 @@
 
 	branch = master
 
-[submodule "src/spl"]
+[submodule "src/spl2"]
 
 	path = src/spl
 
 	url = https://github.com/pmmp/PocketMine-SPL.git
 
-[submodule "src/pocketmine/lang/locale"]
+[submodule "src/pocketmine/lang/locale2"]
 
 	path = src/pocketmine/lang/locale
 
